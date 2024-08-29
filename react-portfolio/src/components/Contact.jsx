@@ -13,10 +13,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between mb-10 border-t border-neutral-300 pt-10 mt-20 lg:flex-row lg:space-y-0 lg:px-20">
+    <div className="flex flex-col items-center justify-between mb-10  pt-10 mt-20 lg:flex-row lg:space-y-0 lg:px-20">
       {/* Logo */}
       <div className="flex-shrink-0 mb-10 lg:mb-0 lg:w-1/4 flex justify-center lg:justify-start">
-        <img src={logo} alt="Logo" className="w-10 rounded-full scale-150 " />
+        <img src={logo} alt="Logo" className="w-10 rounded-full scale-125 " />
       </div>
 
       {/* Main Content */}
@@ -36,22 +36,22 @@ const Contact = () => {
           <h3 className="text-xs uppercase tracking-wider text-gray-600 font-semibold mb-2">Contact</h3>
           <div className="flex flex-col space-y-2">
             <a
-              href="https://www.linkedin.com/in/yourprofile"
-              className="flex items-center space-x-2 font-bold text-sm text-gray-800 hover:text-blue-500"
+              href="https://www.linkedin.com/in/llorenzocardoso/" target="_blank"
+              className="flex items-center space-x-2 font-bold text-sm text-zinc-900 hover:text-blue-500"
             >
               <span>LinkedIn</span>
               <FaExternalLinkAlt />
             </a>
             <a
-              href="https://read.cv/yourprofile"
-              className="flex items-center space-x-2 font-bold text-sm text-gray-800 hover:text-blue-500"
+              href="https://read.cv/lorenzocardoso" target="_blank"
+              className="flex items-center space-x-2 font-bold text-sm text-zinc-900 hover:text-blue-500"
             >
               <span>Read.cv</span>
               <FaExternalLinkAlt />
             </a>
             <a
-              href="mailto:your.email@example.com"
-              className="flex items-center space-x-2 font-bold text-sm text-gray-800 hover:text-blue-500"
+              href="mailto:llorenzocardoso1@gmail.com" target="_blank"
+              className="flex items-center space-x-2 font-bold text-sm text-zinc-900 hover:text-blue-500"
             >
               <span>Mail</span>
               <FaExternalLinkAlt />
