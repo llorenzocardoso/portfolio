@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion"; // Importe o AnimatePresence
 import Contact from "./Contact";
 
 const About = () => {
-  const [isOpen, setIsOpen] = useState({ background: false, philosophy: false, love: false });
+  const [isOpen, setIsOpen] = useState({ background: false, love: false });
 
   const toggleSection = (section) => {
     setIsOpen((prev) => ({ ...prev, [section]: !prev[section] }));
@@ -14,7 +15,8 @@ const About = () => {
         <div className="flex-grow flex flex-col justify-center w-full max-w-2xl mx-auto">
           <div>
             <h1 className="mb-6 text-left text-3xl md:text-4xl font-semibold text-gray-900">Lorenzo</h1>
-            <p className="text-left text-gray-500 font-extralight text-md md:text-lg mb-10">
+            <p
+              className="text-left text-gray-500 font-extralight text-md md:text-lg mb-10">
               Sou estudante do curso superior de Análise e Desenvolvimento de Sistemas, atualmente no 6º semestre. Possuo conhecimentos em Kotlin, Flutter, Java, Python, PHP, C#, e Banco de Dados.
             </p>
 
@@ -24,13 +26,27 @@ const About = () => {
                 onClick={() => toggleSection("background")}
               >
                 Background
-                <span className="text-xl text-gray-500">{isOpen.background ? "−" : "+"}</span>
+                <motion.span
+                  className="text-xl text-gray-500"
+                  animate={{ rotate: isOpen.background ? 45 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  +
+                </motion.span>
               </button>
-              {isOpen.background && (
-                <p className="mt-3 text-gray-700">
-                  Detalhes sobre o seu background.
-                </p>
-              )}
+              <AnimatePresence>
+                {isOpen.background && (
+                  <motion.div
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="mt-3 text-gray-700"
+                  >
+                    Adicionar detalhes sobre meu background.
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <div className="py-4">
@@ -39,13 +55,27 @@ const About = () => {
                 onClick={() => toggleSection("love")}
               >
                 Things I Love
-                <span className="text-xl text-gray-500">{isOpen.love ? "−" : "+"}</span>
+                <motion.span
+                  className="text-xl text-gray-500"
+                  animate={{ rotate: isOpen.love ? 45 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  +
+                </motion.span>
               </button>
-              {isOpen.love && (
-                <p className="mt-3 text-gray-700">
-                  Detalhes sobre as coisas que você ama.
-                </p>
-              )}
+              <AnimatePresence>
+                {isOpen.love && (
+                  <motion.div
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="mt-3 text-gray-700"
+                  >
+                    Adicionar detalhes sobre as coisas que amo.
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>

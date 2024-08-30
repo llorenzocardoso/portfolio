@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <div className="py-20">
-      <h2 className="my-20 text-center text-4xl text-zinc-900">Projects</h2>
+    <div className="pb-20">
+      <h2 className="mb-20 mt-6 uppercase tracking-wider text-center text-xl font-semibold text-zinc-900">Projects</h2>
       <div className="flex flex-wrap justify-center gap-12">
         {PROJECTS.map((project, index) => (
           <motion.div 
