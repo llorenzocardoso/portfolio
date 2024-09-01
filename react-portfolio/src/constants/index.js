@@ -1,7 +1,7 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import project1 from "../assets/projects/project-1.png";
+import project2 from "../assets/projects/project-2.png";	
+import project2Secondary from "../assets/projects/project-2-secondary.png";
+import project1Secondary from "../assets/projects/project-1-secondary.jpg"; // Nova imagem
 
 export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With 5 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as back-end technologies like Node.js, MySQL, PostgreSQL, and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
@@ -40,31 +40,19 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
+    title: "FlixFlix",
     image: project1,
+    secondaryImage: project1Secondary, // Adicionando a segunda imagem
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "Desenvolvi um aplicativo de filmes em Flutter com login seguro, catálogo de filmes em alta, carrossel de destaques e tema escuro, usando Firebase e a API TMDb. Atualmente, estou refatorando para Kotlin para adicionar novas funcionalidades.",
+    technologies: ["Flutter", "Kotlin", "Firebase", "Figma", "TMDb API"],
   },
   {
-    title: "Task Management App",
+    title: "Weather App",
     image: project2,
+    secondaryImage: project2Secondary, // Adicionando a segunda imagem
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+      "Desenvolvi um aplicativo de previsão do tempo em Flutter com dados em tempo real da API OpenWeatherMap. O app permite buscar o clima de várias cidades, exibir dados como temperatura e umidade, e conta com animações intuitivas e modo noturno ajustável. Também inclui geolocalização para mostrar o clima local dinamicamente.",
+    technologies: ["Flutter", "Dart", "Geolocator", "Lottie", "OpenWeatherMap API"],
   },
-  {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  },
-  {
-    title: "Blogging Platform",
-    image: project4,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
-  },
-];;
+];
