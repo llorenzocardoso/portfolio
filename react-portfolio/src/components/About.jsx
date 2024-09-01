@@ -17,7 +17,7 @@ const About = () => {
             <h1 className="mb-6 text-left text-3xl md:text-4xl font-semibold text-gray-900">Lorenzo</h1>
             <p
               className="text-left text-gray-500 font-extralight text-md md:text-lg mb-10">
-              Sou estudante do curso superior de Análise e Desenvolvimento de Sistemas, atualmente no 6º semestre. Possuo conhecimentos em Kotlin, Flutter, Java, Python, PHP, C#, e Banco de Dados.
+              I am a student in the undergraduate program of Systems Analysis and Development, currently in the 6th semester. I have knowledge in Kotlin, Flutter, Java, Python, PHP, C#, and databases such as MySQL and MongoDB.
             </p>
 
             <div className="py-4">

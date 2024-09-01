@@ -80,9 +80,8 @@ const Contact = () => {
             </motion.div>
           )}
         </div>
-        <p className="text-xs text-gray-800 text-center lg:text-right">© 2024 TESTE 123. PIPIPIPOPO</p>
-        <p className="text-xs text-gray-800 text-center lg:text-right">
-          Made with ❤ and Guaranázinho (antarctica e zero de preferência).
+        <p className="text-xs text-gray-800 text-center  lg:text-right">
+          © 2024 Lorenzo Cardoso. <br/> All Rights Reserved.
         </p>
       </div>
     </div>
