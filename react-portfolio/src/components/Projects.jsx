@@ -46,23 +46,20 @@ const Projects = () => {
                 ))}
               </div>
             </div>
-            <div className="md:w-2/3 flex justify-center h-full">
-              <div
-                className="p-4 w-full max-w-5xl h-[28rem] flex justify-center items-center gap-4"
-              >
+            <div className="md:w-1/2 flex flex-col md:flex-row justify-center h-full">
+              <div className="p-2 w-full max-w-4xl h-auto flex flex-col md:flex-row justify-center items-center gap-4">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="max-h-full object-contain rounded-md"
+                  className="w-full md:w-2/5 max-h-full object-contain rounded-md"
                 />
                 <img
                   src={project.secondaryImage}
                   alt={`${project.title} secondary`}
-                  className="max-h-full object-contain rounded-md"
+                  className="w-full md:w-2/5 max-h-full object-contain rounded-md"
                 />
               </div>
             </div>
-
           </div>
         </motion.div>
       ))}
