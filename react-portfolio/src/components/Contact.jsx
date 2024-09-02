@@ -50,6 +50,14 @@ const Contact = () => {
               <FaExternalLinkAlt />
             </a>
             <a
+              href="https://github.com/llorenzocardoso"
+              target="_blank"
+              className="flex items-center space-x-2 font-bold text-sm text-zinc-900 hover:text-blue-500"
+            >
+              <span>GitHub</span>
+              <FaExternalLinkAlt />
+            </a>
+            <a
               href="mailto:llorenzocardoso1@gmail.com"
               target="_blank"
               className="flex items-center space-x-2 font-bold text-sm text-zinc-900 hover:text-blue-500"
