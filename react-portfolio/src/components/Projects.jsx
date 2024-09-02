@@ -28,6 +28,7 @@ const Projects = () => {
       {PROJECTS.map((project, index) => (
         <motion.div
           key={index}
+          id={project.id}
           animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
@@ -45,6 +46,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
+              <a href={project.project_url} target="_blank" rel="noopener noreferrer" className="bg-zinc-900 text-white px-4 py-2 rounded">View on GitHub</a>
             </div>
             <div className="md:w-1/2 flex flex-col md:flex-row justify-center h-full">
               <div className="p-2 w-full max-w-4xl h-auto flex flex-col md:flex-row justify-center items-center gap-4">

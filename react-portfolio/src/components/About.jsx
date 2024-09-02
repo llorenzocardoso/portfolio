@@ -17,7 +17,7 @@ const About = () => {
             <h1 className="mb-6 text-left text-3xl md:text-4xl font-semibold text-gray-900">Lorenzo</h1>
             <p
               className="text-left text-gray-500 font-extralight text-md md:text-lg mb-10">
-              I am a student in the undergraduate program of Systems Analysis and Development, currently in the 6th semester. I have knowledge in Kotlin, Flutter, Java, Python, PHP, C#, and databases such as MySQL and MongoDB.
+              I’m currently pursuing a degree in Systems Analysis and Development, and I’m in the 6th semester. I have knowledge in Kotlin, Flutter, Java, Python, PHP, C#, and databases such as MySQL and MongoDB.
             </p>
 
             <div className="py-4">
@@ -43,7 +43,10 @@ const About = () => {
                     transition={{ duration: 0.5 }}
                     className="mt-3 text-gray-700"
                   >
-                    Adicionar detalhes sobre meu background.
+                    My name is Lorenzo, I’m 20 years old, and I’m from Arroio do Sal, RS, where I still live today. Since childhood, I’ve always had a passion for technology, and after finishing high school, I decided to pursue a degree in Systems Analysis and Development.
+                    <br />
+                    <br />
+                    Throughout my academic journey, I developed a deeper interest in Mobile development, especially in creating apps with clean and minimalist designs!
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -72,7 +75,10 @@ const About = () => {
                     transition={{ duration: 0.5 }}
                     className="mt-3 text-gray-700"
                   >
-                    Adicionar detalhes sobre as coisas que amo.
+                    I am passionate about many things that make my day-to-day life more joyful. I enjoy playing online with my friends and love the company of my pets — I have 8 cats, 5 dogs, and a tortoise named Lola. My family and my girlfriend are essential to me, and traveling is something I really enjoy.
+                    <br />
+                    <br />
+                    I also love a good ice cream, watching movies, series, and live streams. I am into photography, skateboarding, playing sports, and many other activities!
                   </motion.div>
                 )}
               </AnimatePresence>

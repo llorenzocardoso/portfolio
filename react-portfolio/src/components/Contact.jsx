@@ -20,9 +20,12 @@ const Contact = () => {
         <div className="flex flex-col text-left lg:w-1/3 lg:justify-start mb-10 lg:mb-0">
           <h3 className="text-xs uppercase tracking-wider text-gray-600 font-semibold mb-2">Projects</h3>
           <div className="flex flex-col space-y-2">
-            <p className="text-sm text-gray-800 font-bold">Project 1</p>
-            <p className="text-sm text-gray-800 font-bold">Project 2</p>
-            <p className="text-sm text-gray-800 font-bold">project 3</p>
+            <a href="#1" className="text-sm text-gray-800 font-bold hover:text-blue-500">
+              Project 1
+            </a>
+            <a href="#2" className="text-sm text-gray-800 font-bold hover:text-blue-500">
+              Project 2
+            </a>
           </div>
         </div>
 

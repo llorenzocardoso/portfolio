@@ -27,7 +27,7 @@ const Hero = () => {
                     animate="visible"
                     className="text-2xl tracking-tight text-gray-400 text-center"
                 >
-                    Desenvolvedor Mobile
+                    Mobile Developer
                 </motion.span>
             </div>
         </div>

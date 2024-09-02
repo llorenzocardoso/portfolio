@@ -16,3 +16,7 @@ body {
     color: #000; /* Texto de seleção escuro */
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
