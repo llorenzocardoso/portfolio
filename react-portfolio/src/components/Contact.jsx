@@ -26,6 +26,9 @@ const Contact = () => {
             <a href="#2" className="text-sm text-gray-800 font-bold hover:text-blue-500">
               Project 2
             </a>
+            <a href="#3" className="text-sm text-gray-800 font-bold hover:text-blue-500">
+              Project 2
+            </a>
           </div>
         </div>
 
