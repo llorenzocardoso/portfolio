@@ -46,7 +46,7 @@ const About = () => {
                     My name is Lorenzo, I’m 20 years old, and I’m from Arroio do Sal, RS, where I still live today. Since childhood, I’ve always had a passion for technology, and after finishing high school, I decided to pursue a degree in Systems Analysis and Development.
                     <br />
                     <br />
-                    Throughout my academic journey, I developed a deeper interest in Mobile development, especially in creating apps with clean and minimalist designs!
+                    Throughout my academic journey, I developed a deeper interest in Mobile development and Front-end development, especially in creating apps and web applications with clean and minimalist designs!
                   </motion.div>
                 )}
               </AnimatePresence>
