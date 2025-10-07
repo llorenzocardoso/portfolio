@@ -1,14 +1,13 @@
-// import { FaExternalLinkAlt } from "react-icons/fa";
-// import { RiSunFill, RiMoonFill } from "react-icons/ri";
-// import { useState } from "react";
-// import { motion } from "framer-motion";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { RiSunFill, RiMoonFill } from "react-icons/ri";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import logo from "../assets/lorenzoLogo.jpeg";
-// import { useTheme } from "../contexts/ThemeContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Contact = () => {
-    // Dark mode desabilitado temporariamente
-    // const [isHovered, setIsHovered] = useState(false);
-    // const { isDarkMode, toggleTheme } = useTheme();
+    const [isHovered, setIsHovered] = useState(false);
+    const { isDarkMode, toggleTheme } = useTheme();
 
     return (
         <div className="py-24 bg-white dark:bg-black transition-colors duration-300 relative">
@@ -83,31 +82,28 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Footer */}
+                    {/* Dark Mode Toggle and Footer */}
                     <div className="flex flex-col items-start lg:items-end lg:w-1/4 space-y-4">
-                        {/* Dark Mode Toggle - Desabilitado temporariamente */}
-                        {/*
-                            <div
-                                className="relative flex items-center space-x-2 text-sm text-gray-800 dark:text-gray-300 cursor-pointer"
-                                onMouseEnter={() => setIsHovered(true)}
-                                onMouseLeave={() => setIsHovered(false)}
-                            >
-                                <RiSunFill />
-                                <span>Light Mode</span>
+                        <div
+                            className="relative flex items-center space-x-2 text-sm text-gray-800 dark:text-gray-300 cursor-pointer"
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        >
+                            <RiSunFill />
+                            <span>Light Mode</span>
 
-                                {isHovered && (
-                                    <motion.div
-                                        className="absolute -top-8 right-0 px-3 py-1 rounded-md text-xs whitespace-nowrap dark:bg-gray-100 text-black dark:text-white"
-                                        initial={{ y: 10, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: 10, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        Dark Mode coming soon!
-                                    </motion.div>
-                                )}
-                            </div>
-                            */}
+                            {isHovered && (
+                                <motion.div
+                                    className="absolute -top-8 right-0 px-3 py-1 rounded-md text-xs whitespace-nowrap dark:bg-gray-100 text-black dark:text-white"
+                                    initial={{ y: 10, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    exit={{ y: 10, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    Dark Mode coming soon!
+                                </motion.div>
+                            )}
+                        </div>
                         <p className="text-sm text-gray-600 dark:text-gray-400 text-left lg:text-right">
                             © 2025 Lorenzo Cardoso.
                             <br />
