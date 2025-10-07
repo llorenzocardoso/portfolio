@@ -13,8 +13,8 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
     // Dark mode desabilitado temporariamente - sempre light mode
     const [isDarkMode, setIsDarkMode] = useState(false);
-    
-    /* 
+
+    /*
     // Código original do dark mode (comentado)
     const [isDarkMode, setIsDarkMode] = useState(() => {
         const savedTheme = localStorage.getItem("theme");

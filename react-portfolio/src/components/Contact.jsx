@@ -83,10 +83,10 @@ const Contact = () => {
                         </div>
                     </div>
 
-                        {/* Footer */}
-                        <div className="flex flex-col items-start lg:items-end lg:w-1/4 space-y-4">
-                            {/* Dark Mode Toggle - Desabilitado temporariamente */}
-                            {/* 
+                    {/* Footer */}
+                    <div className="flex flex-col items-start lg:items-end lg:w-1/4 space-y-4">
+                        {/* Dark Mode Toggle - Desabilitado temporariamente */}
+                        {/*
                             <div
                                 className="relative flex items-center space-x-2 text-sm text-gray-800 dark:text-gray-300 cursor-pointer"
                                 onMouseEnter={() => setIsHovered(true)}
@@ -108,12 +108,12 @@ const Contact = () => {
                                 )}
                             </div>
                             */}
-                            <p className="text-sm text-gray-600 dark:text-gray-400 text-left lg:text-right">
-                                © 2025 Lorenzo Cardoso.
-                                <br />
-                                All Rights Reserved.
-                            </p>
-                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 text-left lg:text-right">
+                            © 2025 Lorenzo Cardoso.
+                            <br />
+                            All Rights Reserved.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
