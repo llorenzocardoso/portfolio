@@ -11,6 +11,11 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
+    // Dark mode desabilitado temporariamente - sempre light mode
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    
+    /* 
+    // Código original do dark mode (comentado)
     const [isDarkMode, setIsDarkMode] = useState(() => {
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme) {
@@ -28,9 +33,16 @@ export const ThemeProvider = ({ children }) => {
             document.documentElement.classList.remove("dark");
         }
     }, [isDarkMode]);
+    */
+
+    useEffect(() => {
+        // Força light mode
+        document.documentElement.classList.remove("dark");
+    }, []);
 
     const toggleTheme = () => {
-        setIsDarkMode(!isDarkMode);
+        // Desabilitado - não faz nada
+        // setIsDarkMode(!isDarkMode);
     };
 
     return (
