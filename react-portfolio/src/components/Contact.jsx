@@ -13,7 +13,6 @@ const Contact = () => {
         <div className="py-24 bg-white dark:bg-black transition-colors duration-300 relative">
             <div className="max-w-6xl mx-auto">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-12">
-                    {/* Logo */}
                     <div className="flex-shrink-0 flex justify-start lg:w-1/4">
                         <img
                             src={logo}
@@ -24,10 +23,9 @@ const Contact = () => {
 
                     {/* Main Content */}
                     <div className="flex flex-col lg:flex-row lg:flex-1 lg:justify-between gap-12">
-                        {/* Projects Section */}
                         <div className="space-y-4">
                             <h3 className="text-sm text-gray-500 dark:text-gray-400 font-medium tracking-wider uppercase">
-                                Craft
+                                Projects
                             </h3>
                             <div className="space-y-2">
                                 <a
