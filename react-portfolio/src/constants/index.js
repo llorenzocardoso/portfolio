@@ -35,7 +35,7 @@ export const PROJECTS = [
     description:
       "An intuitive note-taking app built with Flutter that supports folder organization. Users can create, edit, and delete notes within custom folders. The app features real-time updates and utilizes the Isar database for efficient local data storage. The UI is modern, using Google Fonts for typography, and it includes a dark mode toggle option.",
     technologies:
-      ["Flutter", "Dart", "Isar", "Google Fonts", "Provider"],
+      ["Flutter", "Dart", "Isar", "Provider"],
   },
 ];
 

@@ -1,16 +1,48 @@
 import { useState, useEffect } from "react";
-import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import proempresarial from "../assets/freelance/proempresarial.png";
+import oficinadosites from "../assets/freelance/oficinadosites.png";
 
-const Projects = () => {
+const FREELANCE_PROJECTS = [
+    {
+        id: 1,
+        title: "Pro Empresarial",
+        description:
+            "Professional landing page developed with React, TypeScript and Tailwind CSS. Deployed using Firebase Hosting with custom domain configuration through registro.br. Features modern design and responsive layout for business presentation.",
+        technologies: [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Firebase Hosting",
+        ],
+        image: proempresarial,
+        website_url: "https://proempresarial.com.br/",
+    },
+    {
+        id: 2,
+        title: "Oficina dos Sites",
+        description:
+            "Another professional landing page developed with React, TypeScript and Tailwind CSS. Deployed using Firebase Hosting with custom domain configuration through registro.br. Features modern design and responsive layout for business presentation.",
+        technologies: [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Firebase Hosting",
+        ],
+        image: oficinadosites,
+        website_url: "https://oficinadosites.com.br/",
+    },
+];
+
+const Freelance = () => {
     const [hasAnimated, setHasAnimated] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             if (!hasAnimated) {
-                const projectSection =
-                    document.getElementById("projects-section");
-                const rect = projectSection.getBoundingClientRect();
+                const freelanceSection =
+                    document.getElementById("freelance-section");
+                const rect = freelanceSection.getBoundingClientRect();
                 if (rect.top <= window.innerHeight && rect.bottom >= 0) {
                     setHasAnimated(true);
                 }
@@ -25,12 +57,12 @@ const Projects = () => {
 
     return (
         <div
-            id="projects-section"
+            id="freelance-section"
             className="py-24 bg-white dark:bg-black transition-colors duration-300 relative"
         >
             <div className="max-w-6xl mx-auto">
                 <div className="space-y-32">
-                    {PROJECTS.map((project, index) => (
+                    {FREELANCE_PROJECTS.map((project, index) => (
                         <motion.div
                             key={index}
                             id={project.id}
@@ -63,7 +95,7 @@ const Projects = () => {
                                         )}
                                     </div>
                                     <a
-                                        href={project.project_url}
+                                        href={project.website_url}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-block bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-lg hover:opacity-80 transition-opacity duration-300 text-sm font-medium"
@@ -98,4 +130,4 @@ const Projects = () => {
     );
 };
 
-export default Projects;
+export default Freelance;
