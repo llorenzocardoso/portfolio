@@ -24,7 +24,7 @@ const Navbar = () => {
                     About
                 </Link>
                 <a
-                    href="https://drive.google.com/file/d/1ryFg6QFbbh6jNOn2Iop6CB1KGWZZd6zR/view"
+                    href="https://drive.google.com/file/d/1pW4KaCBHFBDXuDRUVn64rfmGFusvA3db/view"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 font-medium"
