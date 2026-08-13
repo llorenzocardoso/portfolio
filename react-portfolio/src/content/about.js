@@ -102,7 +102,7 @@ export function getAboutSections(language) {
     const love = pt
         ? [
               "Gosto de muitas coisas que deixam o dia a dia mais leve. Curto jogar " +
-                  "online com os amigos e adoro a companhia dos meus bichos: tenho 13 " +
+                  "online com os amigos e adoro a companhia dos meus bichos: tenho 14 " +
                   "gatos, 8 cachorros e uma jabuti chamada Lola. Minha família, minha " +
                   "namorada e amigos são essenciais para mim, e viajar é algo de que gosto muito.",
 
@@ -112,7 +112,7 @@ export function getAboutSections(language) {
         : [
               "I am passionate about many things that make my day-to-day life more " +
                   "joyful. I enjoy playing online with my friends and love the company " +
-                  "of my pets: I have 13 cats, 8 dogs, and a tortoise named Lola. My " +
+                  "of my pets: I have 14 cats, 8 dogs, and a tortoise named Lola. My " +
                   "family, my girlfriend and friends are essential to me, and traveling is " +
                   "something I really enjoy.",
 
