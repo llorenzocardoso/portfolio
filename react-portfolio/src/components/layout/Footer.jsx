@@ -17,7 +17,10 @@ const Footer = () => {
 
     return (
     <footer className="border-t border-line">
-        <Container className="py-12 sm:py-16 lg:py-20">
+        {/* Assimétrico de propósito: com padding igual em cima e embaixo,
+            sobrava tanto vazio sob o conteúdo que o rodapé parecia flutuar
+            longe do fim da página. */}
+        <Container className="pb-6 pt-12 sm:pb-8 sm:pt-16 lg:pb-10 lg:pt-20">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
                 <Link to="/" aria-label={`${SITE.name} — ${t("nav.home")}`} className="shrink-0">
                     <img

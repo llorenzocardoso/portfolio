@@ -47,6 +47,7 @@ import { resolveProjectImages } from "../lib/images";
  * @property {string[]} [gallery]     telas soltas na página de detalhe
  * @property {FlowStep[]} [flow]      passo a passo comentado; substitui a galeria
  * @property {'browser'|'phone'} [display]  molda o preview: 4/3 ou retrato
+ * @property {'in'|'none'|'out'} [zoom]  amplia ou reduz a arte dentro do palco
  * @property {Segment[]} [headline]   título da página, em segmentos destacáveis
  * @property {Fact[]}   [facts]       grid de contexto no topo da página
  * @property {Text[]}   [overview]    parágrafos de abertura da página
@@ -79,6 +80,8 @@ const PROJECTS = [
         website: "https://picsofme.com/",
         context: { en: "at Ambanga", pt: "na Ambanga" },
         display: "browser",
+        // O mockup nasce com bastante folga transparente em volta.
+        zoom: "in",
         images: ["picsofme-device.webp"],
         cover: "picsofme-cover.webp",
         gallery: [
@@ -215,6 +218,8 @@ const PROJECTS = [
         technologies: ["Flutter", "NestJS", "PostgreSQL", "Drizzle", "Zod"],
         context: { en: "personal project", pt: "projeto pessoal" },
         display: "browser",
+        // A arte já preenche o quadro; um respiro a deixa mais contida.
+        zoom: "out",
         images: ["welth-mockup.webp"],
         headline: [
             { text: { en: "A finance app that ", pt: "Um app de finanças que " } },

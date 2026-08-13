@@ -4,6 +4,25 @@ import { useT } from "../../i18n/useT";
 import Tilt from "../ui/Tilt";
 
 /**
+ * Zoom da arte dentro do palco, sem mexer no tamanho do palco em si.
+ *
+ * Serve para compensar a margem transparente que cada mockup traz: uns
+ * nascem com muita folga em volta dos aparelhos e pedem `in`, outros já
+ * preenchem o quadro e ficam melhores com `out`. Como a folga é
+ * transparente, o que passa da borda no `in` não aparece.
+ *
+ * As classes ficam escritas por extenso porque o Tailwind lê o código-fonte
+ * para decidir o que gerar — string montada em runtime não chega no CSS.
+ */
+const ZOOM = {
+    // 120 não existe na escala padrão do Tailwind (vai de 110 para 125),
+    // então aqui vale o valor arbitrário.
+    in: "scale-[1.2]",
+    none: "",
+    out: "scale-90",
+};
+
+/**
  * Card de projeto da home, no formato do design: nome do produto pequeno,
  * tagline em display, e uma faixa com metadados de um lado e o preview do
  * outro — alternando o lado a cada card.
@@ -19,9 +38,11 @@ const ProjectCard = ({ project, index = 0 }) => {
         role,
         images,
         display,
+        zoom = "none",
     } = project;
 
     const { t } = useT();
+    const zoomClass = ZOOM[zoom] ?? ZOOM.none;
     const hasImages = images?.length > 0;
     const imageFirst = index % 2 === 1;
 
@@ -120,7 +141,7 @@ const ProjectCard = ({ project, index = 0 }) => {
                                     // estourem o container em telas estreitas.
                                     // A sombra dá ao mockup recortado a mesma
                                     // profundidade que ele tem no design.
-                                    className="h-full min-w-0 max-w-full object-contain drop-shadow-2xl"
+                                    className={`h-full min-w-0 max-w-full object-contain drop-shadow-2xl ${zoomClass}`}
                                 />
                             ))}
                         </Tilt>
