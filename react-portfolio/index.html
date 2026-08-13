@@ -2,58 +2,80 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link
-            rel="icon"
-            type="image/jpeg"
-            href="/src/assets/lorenzoLogo.jpeg"
-        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/jpeg" href="/lorenzo-logo.jpeg" />
+        <link rel="apple-touch-icon" href="/lorenzo-logo.jpeg" />
 
-        <!-- SEO Meta Tags -->
-        <title>Lorenzo Cardoso - Developer Portfolio</title>
+        <!-- Pinta a barra do navegador mobile com a cor do tema ativo. -->
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#ffffff"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#121212"
+        />
+
+        <!-- SEO -->
+        <title>Lorenzo Cardoso — Developer Portfolio</title>
         <meta
             name="description"
-            content="Lorenzo Cardoso - Full Stack Developer specializing in Flutter, React, Python, and modern web technologies."
-        />
-        <meta
-            name="keywords"
-            content="Lorenzo Cardoso, Developer, Portfolio, Flutter, React, Python, Web Development, Mobile Development"
+            content="Lorenzo Cardoso — developer focused on mobile and front-end, working with Flutter, React, TypeScript and Python."
         />
         <meta name="author" content="Lorenzo Cardoso" />
+        <link rel="canonical" href="https://lorenzocardoso.com/" />
 
-        <!-- Open Graph Meta Tags (for social media) -->
-        <meta
-            property="og:title"
-            content="Lorenzo Cardoso - Developer Portfolio"
-        />
+        <!-- Open Graph -->
+        <meta property="og:title" content="Lorenzo Cardoso — Developer Portfolio" />
         <meta
             property="og:description"
-            content="Full Stack Developer specializing in Flutter, React, Python, and modern web technologies."
+            content="Developer focused on mobile and front-end, working with Flutter, React, TypeScript and Python."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://lorenzocardoso.com" />
-        <meta property="og:image" content="/src/assets/lorenzoLogo.jpeg" />
-
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:url" content="https://lorenzocardoso.com/" />
         <meta
-            name="twitter:title"
-            content="Lorenzo Cardoso - Developer Portfolio"
+            property="og:image"
+            content="https://lorenzocardoso.com/lorenzo-logo.jpeg"
         />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Lorenzo Cardoso — Developer Portfolio" />
         <meta
             name="twitter:description"
-            content="Full Stack Developer specializing in Flutter, React, Python, and modern web technologies."
+            content="Developer focused on mobile and front-end, working with Flutter, React, TypeScript and Python."
         />
-        <meta name="twitter:image" content="/src/assets/lorenzoLogo.jpeg" />
+        <meta
+            name="twitter:image"
+            content="https://lorenzocardoso.com/lorenzo-logo.jpeg"
+        />
 
-        <!-- Google Analytics (substitua YOUR_GA_ID pelo seu ID do Google Analytics) -->
-        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'YOUR_GA_ID');
-    </script> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <script>
+            // Aplica o tema antes do primeiro paint, senão a página pisca
+            // branca antes do React montar. Roda síncrono de propósito.
+            (function () {
+                try {
+                    var saved = localStorage.getItem("theme");
+                    var prefersDark = window.matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    ).matches;
+                    if (saved === "dark" || (!saved && prefersDark)) {
+                        document.documentElement.classList.add("dark");
+                    }
+                } catch (e) {
+                    /* localStorage bloqueado: segue no tema claro */
+                }
+            })();
+        </script>
     </head>
     <body>
         <div id="root"></div>

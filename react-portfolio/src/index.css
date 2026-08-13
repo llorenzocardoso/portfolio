@@ -1,29 +1,86 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    font-family: "Inter", sans-serif;
-}
+@layer base {
+    /*
+     * Paleta em canais RGB (sem `rgb()`) para o Tailwind poder aplicar
+     * opacidade — ver tailwind.config.js.
+     *
+     * Os valores light vêm do design no Figma: #191f28 para títulos,
+     * #3a4451 para corpo, #616161/#929292 para texto secundário,
+     * #c2c2c2 nas barras divisoras e #3182f6 como acento.
+     *
+     * O dark não existe no design de referência (que é light-only), então
+     * é derivado: mesma hierarquia de contraste, carvão em vez de preto
+     * puro e um azul mais claro para o acento se manter legível.
+     */
+    :root {
+        --bg: 255 255 255;
+        --surface: 247 247 247;
+        --surface-2: 240 240 240;
+        /* #ebebeb do design é quase invisível sobre branco (1.06:1);
+           alguns pontos mais escuro mantém a sutileza e a torna legível. */
+        --line: 227 227 227;
+        --rule: 194 194 194;
+        --fg: 25 31 40;
+        --body: 58 68 81;
+        --muted: 97 97 97;
+        --faint: 146 146 146;
+        --accent: 49 130 246;
 
-body {
-    background-color: #f9f9f9; /* Fundo claro */
-    color: #333; /* Texto mais escuro para contraste */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+        color-scheme: light;
+    }
 
-body.dark {
-    background-color: #000000; /* Fundo preto verdadeiro */
-    color: #ffffff; /* Texto branco para contraste */
-}
+    /* Escala neutra a partir de #121212 — sem o leve azulado de antes, para
+       o fundo bater com a cor pedida. */
+    .dark {
+        --bg: 18 18 18;
+        --surface: 26 26 26;
+        --surface-2: 34 34 34;
+        --line: 42 42 42;
+        --rule: 74 74 74;
+        --fg: 237 237 237;
+        --body: 184 184 184;
+        --muted: 151 151 151;
+        --faint: 121 121 121;
+        --accent: 96 160 255;
 
-body.dark selection {
-    background-color: #333333; /* Seleção com fundo escuro */
-    color: #ffffff; /* Texto de seleção branco */
-}
+        color-scheme: dark;
+    }
 
-html {
-    scroll-behavior: smooth;
+    html {
+        scroll-behavior: smooth;
+        /* Evita que o iOS aumente a fonte sozinho ao girar o aparelho. */
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        @apply bg-bg text-body antialiased;
+        /* Sem transição no primeiro paint: só quando o usuário troca o tema. */
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    ::selection {
+        @apply bg-fg text-bg;
+    }
+
+    /* Foco visível só para navegação por teclado, com contraste nos dois temas. */
+    :focus-visible {
+        @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
 }

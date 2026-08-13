@@ -1,79 +1,41 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Projects from "./components/Projects";
-import Freelance from "./components/Freelance";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import Footer from "./components/layout/Footer";
+import Navbar from "./components/layout/Navbar";
+import ScrollToTop from "./components/layout/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { LanguageProvider } from "./i18n/LanguageContext";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import ProjectDetail from "./pages/ProjectDetail";
 
-const App = () => {
-    return (
-        <ThemeProvider>
+const App = () => (
+    <ThemeProvider>
+        <LanguageProvider>
             <Router>
-                <div className="overflow-x-hidden text-gray-800 dark:text-white antialiased bg-white dark:bg-black transition-colors duration-300">
-                    <div className="max-w-6xl mx-auto relative">
-                        <div className="border-x border-gray-200 dark:border-gray-700">
-                            <div className="px-8">
-                                <Navbar />
-                            </div>
+                <ScrollToTop />
+                <div className="min-h-svh overflow-x-hidden bg-bg text-fg">
+                    <div className="relative mx-auto min-h-svh max-w-6xl border-x border-line">
+                        <Navbar />
+                        <main>
                             <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/about" element={<About />} />
+                                {/* Projetos ficam na raiz (/picsofme), não em
+                                    /projects/x. O react-router dá precedência
+                                    à rota estática, então /about não colide. */}
+                                <Route path="/:slug" element={<ProjectDetail />} />
                                 <Route
-                                    path="/"
-                                    element={
-                                        <>
-                                            <div className="border-t border-gray-200 dark:border-gray-700">
-                                                <div className="px-8">
-                                                    <Hero />
-                                                </div>
-                                            </div>
-                                            <div className="border-t border-gray-200 dark:border-gray-700">
-                                                <div className="px-8 py-12">
-                                                    <h2 className="text-lg text-gray-700 dark:text-gray-400 font-bold tracking-wider uppercase text-center">
-                                                        PROJECTS
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                            <div className="border-t border-gray-200 dark:border-gray-700">
-                                                <div className="px-8">
-                                                    <Projects />
-                                                </div>
-                                            </div>
-                                            <div className="border-t border-gray-200 dark:border-gray-700">
-                                                <div className="px-8 py-12">
-                                                    <h2 className="text-lg text-gray-700 dark:text-gray-400 font-bold tracking-wider uppercase text-center">
-                                                        FREELANCE WORKS
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                            <div className="border-t border-gray-200 dark:border-gray-700">
-                                                <div className="px-8">
-                                                    <Freelance />
-                                                </div>
-                                            </div>
-                                            <div className="border-t border-gray-200 dark:border-gray-700">
-                                                <div className="px-8">
-                                                    <Contact />
-                                                </div>
-                                            </div>
-                                        </>
-                                    }
-                                />
-                                <Route
-                                    path="/about"
-                                    element={
-                                        <div className="px-8">
-                                            <About />
-                                        </div>
-                                    }
+                                    path="*"
+                                    element={<Navigate to="/" replace />}
                                 />
                             </Routes>
-                        </div>
+                        </main>
+                        <Footer />
                     </div>
                 </div>
             </Router>
-        </ThemeProvider>
-    );
-};
+        </LanguageProvider>
+    </ThemeProvider>
+);
 
 export default App;

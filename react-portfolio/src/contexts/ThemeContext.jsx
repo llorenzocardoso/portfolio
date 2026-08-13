@@ -1,6 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
+
+const STORAGE_KEY = "theme";
 
 export const useTheme = () => {
     const context = useContext(ThemeContext);
@@ -10,43 +12,48 @@ export const useTheme = () => {
     return context;
 };
 
+function getInitialTheme() {
+    // O script inline no index.html já aplicou a classe antes do primeiro
+    // paint; ler de volta do DOM mantém React e página em sincronia e evita
+    // o flash de tema errado.
+    if (typeof document !== "undefined") {
+        return document.documentElement.classList.contains("dark")
+            ? "dark"
+            : "light";
+    }
+    return "light";
+}
+
 export const ThemeProvider = ({ children }) => {
-    // Dark mode desabilitado temporariamente - sempre light mode
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    /*
-    // Código original do dark mode (comentado)
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            return savedTheme === "dark";
-        }
-        return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    });
+    const [theme, setTheme] = useState(getInitialTheme);
 
     useEffect(() => {
-        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        localStorage.setItem(STORAGE_KEY, theme);
+    }, [theme]);
 
-        if (isDarkMode) {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    }, [isDarkMode]);
-    */
-
+    // Acompanha o tema do sistema enquanto o usuário não escolher um
+    // manualmente.
     useEffect(() => {
-        // Força light mode
-        document.documentElement.classList.remove("dark");
+        const query = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const handleChange = (event) => {
+            if (localStorage.getItem(STORAGE_KEY)) return;
+            setTheme(event.matches ? "dark" : "light");
+        };
+
+        query.addEventListener("change", handleChange);
+        return () => query.removeEventListener("change", handleChange);
     }, []);
 
-    const toggleTheme = () => {
-        // Desabilitado - não faz nada
-        // setIsDarkMode(!isDarkMode);
-    };
+    const toggleTheme = useCallback(() => {
+        setTheme((current) => (current === "dark" ? "light" : "dark"));
+    }, []);
 
     return (
-        <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+        <ThemeContext.Provider
+            value={{ theme, isDarkMode: theme === "dark", toggleTheme }}
+        >
             {children}
         </ThemeContext.Provider>
     );
